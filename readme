@@ -1,26 +1,8 @@
-Alex Chantavy proudly presents
-
 PolygonIllustrator and Triangulator
 
-Version: 1.5
 Release Date: May 23, 2010
-Working Executable Example located at 
-http://www2.hawaii.edu/~chantavy/ics311/assignments/a4
-JavaDoc located at 
-http://www2.hawaii.edu/~chantavy/ics311/assignments/a4/doc/
 License: BSD License
 http://opensource.org/licenses/bsd-license.php
-
-Special Features:
-+  Progress bar:  User knows how far along the algorithm is in execution
-+  Cancel button: User may halt execution of the algorithm
-+  Scale factor drawing: User may adjust how large they want the polygon to be
-displayed.
-+  Preset tests: Comes with 3 specified test URLs
-+  Labeled vertices: All vertices are drawn with numbers in the same order 
-they are specified in the text file
-+  Clear colors: All chords drawn as dotted lines, optimal triangulation drawn
-in bold lines
 
 Overview:
 This package contains the software implementation of assignment 4, 
@@ -32,8 +14,7 @@ This software is implemented as a Java applet and will compile
 on a system running JDK 1.5.0.
 
 Algorithm Used:
-    The algorithm used was an EXHAUSTIVE SEARCH designed by Alex Chantavy.  
-The algorithm executes in the following manner:
+    The algorithm used was an EXHAUSTIVE SEARCH:
 1. Generate all possible chords of the polygon
 2. In an array A, sort the chords from least to greatest with respect to length.
 3. Let s = the size of array A.
@@ -66,8 +47,7 @@ the applet attempts to draw the chords of the polygon on top of the
 existing polygon in the graphics pane.
 
 Acknowledgements:
-I. This work uses Jon Lai's a4 extra credit assignment for graphics 
-functionality.  (Original source file name: Polygon_drawing01.tar)
+I. Graphics functionality by Jon Lai.  
 
 II.  Credit goes to Michael Gilleland for his CombinationGenerator class.  
 URL: http://www.merriampark.com/comb.htm 
@@ -79,69 +59,21 @@ segment is internal to a polygon.
 IV. Introduction to Algorithms by Cormen, Leiserson, Rivest, and Stein 3rd Edition 
 provided algorithms to compute cross products and line intersections
 
-Known Problems:
-This product does not compile on UHUnix because it uses SwingWorker to manage thread 
-execution, which requires JDK 1.6  UHUnix only has JDK 1.5.  Instructions on how to manage
-this problem are included in the next section of this document.
-Jon Lai's VerifyStrings.java gives many errors in compilation.  Also, the algorithm
-used is very slow for n > 16.  In a future release, it may be possible to work in 
-Robert Kim's binary search idea.  
-
 Installation:
-PolygonIllustrator requires JDK 1.6 or higher.  Because UHUnix only has JDK 1.5, 
-PolygonIllustrator will not compile on UHUnix.  We offer two methods to get around
-this problem.  Method one involves using precompiled class files, and method two 
-involves compiling the source on your own JDK 1.6 computer.
+Requires JDK 1.6 or higher.  
 
-Method One: Download a tarball of the compiled class files
-Required: UHUnix account, knowledge of Unix
-1.  Download: http://www2.hawaii.edu/~chantavy/ics311/assignments/a4/a4_classfiles.tar.gz
+UI stuff I'm happy about:
++  Progress bar:  User knows how far along the algorithm is in execution
++  Cancel button: User may halt execution of the algorithm
++  Scale factor drawing: User may adjust how large they want the polygon to be
+displayed.
++  Preset tests: Comes with 3 specified test URLs (not working anymore, it's been 
+years :S )
++  Labeled vertices: All vertices are drawn with numbers in the same order 
+they are specified in the text file
++  Clear colors: All chords drawn as dotted lines, optimal triangulation drawn
+in bold lines
 
-2. Copy a4_classfiles.tar.gz to a directory on uhunix with 
-    % scp a4_classfiles.tar.gz <username>@uhunix.hawaii.edu:<path>
-    where <username> is your uhunix username and 
-    <path> is a path to the directory where you want a4_7148.tar.gz to be.
-
-3. Log into uhunix via SSH:
-    % ssh <username>@uhunix.hawaii.edu
-
-4. Change to the directory containing a4_classfiles.tar.gz
-    % cd <path>
-
-5. Unzip and extract:
-    % gunzip a4_classfiles.tar.gz
-    % tar xvf a4_classfiles.tar
-
-6. Change permissions for all necessary files:
-    % chmod 777 a4
-    % cd a4
-    % chmod 644 *.html
-    % chmod 777 alexchantavy
-    % cd alexchantavy
-    % chmod 755 *.class
-    
-7. Done! Go to a browser and enter the URL for index.html
-    
-Method Two: Compile source files on desktop computer and upload to UHUnix
-Required: Computer with JDK 1.6 or higher, UHUnix account, Unix knowledge
-1.  Extract the included a4_7148.tar.gz contents to a directory on your computer
-    % gunzip a4_7148.tar.gz
-    % tar xvf a4_7148.tar
-
-2. Change permissions
-    % chmod 777 a4
-    
-3. Compile using included makefile script.
-    % cd a4
-    % chmod 777 makefile
-    % make
-    
-4. Pack up the compiled files in a tarball.
-    % cd ..
-    % tar -cvf a4_classfiles.tar a4/
-    % gzip -c a4_classfiles.tar > a4_classfiles.tar.gz
-    
-5. Follow steps 2-7 of METHOD ONE.
 
 Revision History:
 Version 1.5    -    5/23/2010: Second Release
